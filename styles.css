@@ -28,6 +28,12 @@ body {
   line-height: 1.65;
 }
 
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   color: var(--accent-strong);
   text-underline-offset: 0.2em;
@@ -42,6 +48,48 @@ a:focus-visible {
 .container {
   width: min(100% - 32px, 880px);
   margin: 0 auto;
+}
+
+.landing-shell {
+  flex: 1;
+  display: grid;
+  align-items: center;
+  padding: 72px 0;
+}
+
+.landing-hero {
+  max-width: 620px;
+}
+
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--accent-strong);
+  border-radius: 8px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--accent-strong);
+  color: #ffffff;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--accent-strong);
 }
 
 .site-header {

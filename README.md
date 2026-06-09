@@ -1,22 +1,23 @@
-# Kipu Privacy Policy
+# Kipu Website
 
-Static privacy policy site for the iOS app **Kipu**. It is designed to be published on GitHub Pages and used as the Privacy Policy URL in App Store Connect.
+Static website for the iOS app **Kipu**. It is designed to be published on GitHub Pages with a simple landing page at `/` and the Privacy Policy at `/privacy/`.
 
 ## Files
 
-- `index.html` - Main Privacy Policy page, accessible from the site root.
-- `privacy.html` - Lightweight redirect to the root policy page.
+- `index.html` - Simple landing page, accessible from the site root.
+- `privacy/index.html` - Main Privacy Policy page, accessible from `/privacy/`.
+- `privacy.html` - Lightweight redirect to `privacy/index.html` for local compatibility.
 - `styles.css` - Responsive, dependency-free styling.
 
 ## Before Publishing
 
-Replace every placeholder in `index.html`:
+Replace every placeholder in `privacy/index.html`:
 
 - `[APP STORE PRIVACY DETAILS: ...]`
 - `[THIRD-PARTY SERVICE NAME AND PURPOSE, IF APPLICABLE]`
 - `[LINK TO THIRD-PARTY PRIVACY POLICY, IF APPLICABLE]`
 - `[OPTIONAL BUSINESS ADDRESS OR REGION]`
-- Canonical URL in the `<link rel="canonical">` tag
+- Canonical URLs in the `<link rel="canonical">` tags
 
 Confirm these privacy details before submitting the URL to App Store Connect:
 
@@ -31,7 +32,20 @@ This draft is not legal advice. Review it against Kipu's actual behavior and app
 
 ## Preview Locally
 
-Open `index.html` directly in a browser. No build step or local server is required.
+Open `index.html` directly in a browser for the landing page, or `privacy/index.html` for the Privacy Policy.
+
+For the clean `/privacy/` route locally, serve the folder with a static server first:
+
+```bash
+python -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000/
+http://localhost:8000/privacy/
+```
 
 ## Publish With GitHub Pages
 
@@ -40,7 +54,7 @@ Open `index.html` directly in a browser. No build step or local server is requir
 
    ```bash
    git init
-   git add index.html privacy.html styles.css README.md
+   git add index.html privacy/index.html privacy.html styles.css README.md
    git commit -m "Add Kipu privacy policy site"
    git branch -M main
    git remote add origin https://github.com/YOUR-GITHUB-USERNAME/Kipu-web.git
@@ -58,5 +72,5 @@ Open `index.html` directly in a browser. No build step or local server is requir
    https://YOUR-GITHUB-USERNAME.github.io/Kipu-web/
    ```
 
-9. Update the canonical URL in `index.html` to the final GitHub Pages URL.
-10. Use the final URL in App Store Connect under the app's Privacy Policy URL field.
+9. Update the canonical URLs in `index.html` and `privacy/index.html` to the final GitHub Pages URLs.
+10. Use the `/privacy/` URL in App Store Connect under the app's Privacy Policy URL field.
