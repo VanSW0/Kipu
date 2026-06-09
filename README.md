@@ -1,12 +1,16 @@
 # Kipu Website
 
-Static website for the iOS app **Kipu**. It is designed to be published on GitHub Pages with a simple landing page at `/` and the Privacy Policy at `/privacy/`.
+Static website for the iOS app **Kipu**. It is designed to be published on GitHub Pages with a simple landing page at `/`, the Privacy Policy at `/privacy/`, Terms and Conditions at `/terms/`, and support at `/support/`.
 
 ## Files
 
 - `index.html` - Simple landing page, accessible from the site root.
 - `privacy/index.html` - Main Privacy Policy page, accessible from `/privacy/`.
 - `privacy.html` - Lightweight redirect to `privacy/index.html` for local compatibility.
+- `terms/index.html` - Terms and Conditions page, accessible from `/terms/`.
+- `terms.html` - Lightweight redirect to `terms/index.html` for local compatibility.
+- `support/index.html` - Support page, accessible from `/support/`.
+- `support.html` - Lightweight redirect to `support/index.html` for local compatibility.
 - `styles.css` - Responsive, dependency-free styling.
 
 ## App Store Review Checklist
@@ -25,9 +29,11 @@ Before submitting to App Store Review, confirm that these statements match the s
 
 Use the public `/privacy/` URL as the Privacy Policy URL in App Store Connect.
 
+The Terms page still includes placeholders for jurisdiction and optional website/address details. Replace those before publishing if they are required for your submission or jurisdiction.
+
 ## Preview Locally
 
-Open `index.html` directly in a browser for the landing page, or `privacy/index.html` for the Privacy Policy.
+Open `index.html` directly in a browser for the landing page, `privacy/index.html` for the Privacy Policy, `terms/index.html` for the Terms and Conditions, or `support/index.html` for support.
 
 For the clean `/privacy/` route locally, serve the folder with a static server first:
 
@@ -40,6 +46,8 @@ Then open:
 ```text
 http://localhost:8000/
 http://localhost:8000/privacy/
+http://localhost:8000/terms/
+http://localhost:8000/support/
 ```
 
 ## Publish With GitHub Pages
@@ -49,7 +57,7 @@ http://localhost:8000/privacy/
 
    ```bash
    git init
-   git add index.html privacy/index.html privacy.html styles.css README.md
+   git add index.html privacy/index.html privacy.html terms/index.html terms.html support/index.html support.html styles.css README.md
    git commit -m "Add Kipu privacy policy site"
    git branch -M main
    git remote add origin https://github.com/YOUR-GITHUB-USERNAME/Kipu-web.git

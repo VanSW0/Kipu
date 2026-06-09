@@ -34,7 +34,8 @@
         </p>
         <div class="landing-actions">
           <a class="button-primary" data-privacy-link href="privacy/">Privacy Policy</a>
-          <a class="button-secondary" href="mailto:vansoftware0@gmail.com">Contact</a>
+          <a class="button-secondary" data-terms-link href="terms/">Terms</a>
+          <a class="button-secondary" data-support-link href="support/">Support</a>
         </div>
       </section>
     </main>
@@ -47,6 +48,8 @@
     <script>
       if (window.location.protocol === "file:") {
         document.querySelector("[data-privacy-link]").href = "privacy/index.html";
+        document.querySelector("[data-terms-link]").href = "terms/index.html";
+        document.querySelector("[data-support-link]").href = "support/index.html";
       }
     </script>
   </body>
